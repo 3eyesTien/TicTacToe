@@ -100,9 +100,23 @@ bool checkWinner(char* spaces, char player, char computer) {
     }
 
     // Check columns
+    else if ((spaces[0] != ' ') && (spaces[0] == spaces[3] == spaces[6])) {
+        spaces[0] == player ? std::cout << "You win!\n" : std::cout << "You lose...\n";
+    }
+    else if ((spaces[1] != ' ') && (spaces[1] == spaces[4] == spaces[7])) {
+        spaces[1] == player ? std::cout << "You win!\n" : std::cout << "You lose...\n";
+    }
+    else if ((spaces[2] != ' ') && (spaces[2] == spaces[5] == spaces[8])) {
+        spaces[2] == player ? std::cout << "You win!\n" : std::cout << "You lose...\n";
+    }
 
     // Check diagonals
-
+    else if ((spaces[0] != ' ') && (spaces[0] == spaces[4] == spaces[8])) {
+        spaces[0] == player ? std::cout << "You win!\n" : std::cout << "You lose...\n";
+    }
+    else if ((spaces[2] != ' ') && (spaces[2] == spaces[4] == spaces[6])) {
+        spaces[2] == player ? std::cout << "You win!\n" : std::cout << "You lose...\n";
+    }
 
     return 0;
 }
