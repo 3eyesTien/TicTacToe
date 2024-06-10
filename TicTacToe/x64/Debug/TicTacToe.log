@@ -1,3 +1,4 @@
 ﻿  TicTacToe.cpp
-C:\Users\nobodhi\Documents\GitHub\C++ Projects\TicTacToe\TicTacToe.cpp(19,10): warning C4101: 'gameActive': unreferenced local variable
+C:\Users\nobodhi\Documents\GitHub\C++ Projects\TicTacToe\TicTacToe.cpp(57,14): warning C4804: '>': unsafe use of type 'bool' in operation
+C:\Users\nobodhi\Documents\GitHub\C++ Projects\TicTacToe\TicTacToe.cpp(57,29): warning C4804: '<': unsafe use of type 'bool' in operation
   TicTacToe.vcxproj -> C:\Users\nobodhi\Documents\GitHub\C++ Projects\TicTacToe\x64\Debug\TicTacToe.exe
