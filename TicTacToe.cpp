@@ -9,6 +9,7 @@ void playerMove(char* spaces, char player);
 void computerMove(char* spaces, char computer);
 bool checkWinner(char* spaces, char player, char computer);
 bool checkTie(char* spaces);
+void refreshBoard(char* spaces);
 
 int main()
 {
@@ -17,13 +18,13 @@ int main()
     char computer = 'O';
     bool gameActive = true;
 
-    drawBoard(spaces); //When an array is passed into a function, it decays into a pointer due to how we defined the function
+    refreshBoard(spaces); //When an array is passed into a function, it decays into a pointer due to how we defined the function
     
     while (gameActive) {
         playerMove(spaces, player);
-        drawBoard(spaces); // Draw board again after player move to reflect changes
+        refreshBoard(spaces); // Draw board again after player move to reflect changes
         computerMove(spaces, computer);
-        drawBoard(spaces);
+        refreshBoard(spaces);
     }
     
     return 0;
@@ -79,4 +80,9 @@ bool checkWinner(char* spaces, char player, char computer) {
 bool checkTie(char* spaces) {
 
     return 0;
+}
+
+void refreshBoard(char* spaces){
+    system("cls");
+    drawBoard(spaces);
 }
