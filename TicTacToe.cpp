@@ -23,8 +23,19 @@ int main()
     while (gameActive) {
         playerMove(spaces, player);
         refreshBoard(spaces); // Draw board again after player move to reflect changes
+
+        if (checkWinner(spaces, player, computer)) {
+            gameActive = false;
+            break;
+        }
+
         computerMove(spaces, computer);
         refreshBoard(spaces);
+
+        if (checkWinner(spaces, player, computer)) {
+            gameActive = false;
+            break;
+        }
     }
     
     return 0;
@@ -73,7 +84,25 @@ void computerMove(char* spaces, char computer) {
     }
 
 }
+
 bool checkWinner(char* spaces, char player, char computer) {
+
+    // Check rows
+    if ((spaces[0] != ' ') && (spaces[0] == spaces[1] == spaces[2])) { // Check if first row is all the same character that isn't an empty space
+        // Ternary operator to check if spaces[0] has the same char as player, and does the respective outcome
+        spaces[0] == player ? std::cout << "You win!\n" : std::cout << "You lose...\n";
+    }
+    else if ((spaces[3] != ' ') && (spaces[3] == spaces[4] == spaces[5])) { // Check if second row is all the same character that isn't an empty space        
+        spaces[3] == player ? std::cout << "You win!\n" : std::cout << "You lose...\n";
+    }
+    else if ((spaces[6] != ' ') && (spaces[6] == spaces[7] == spaces[8])) { // Check if third row is all the same character that isn't an empty space        
+        spaces[6] == player ? std::cout << "You win!\n" : std::cout << "You lose...\n";
+    }
+
+    // Check columns
+
+    // Check diagonals
+
 
     return 0;
 }
