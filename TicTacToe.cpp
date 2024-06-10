@@ -10,7 +10,6 @@ void computerMove(char* spaces, char computer);
 bool checkWinner(char* spaces, char player, char computer);
 bool checkTie(char* spaces);
 
-
 int main()
 {
     char spaces[9] = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
@@ -23,6 +22,8 @@ int main()
     while (gameActive) {
         playerMove(spaces, player);
         drawBoard(spaces); // Draw board again after player move to reflect changes
+        computerMove(spaces, computer);
+        drawBoard(spaces);
     }
     
     return 0;
@@ -43,21 +44,32 @@ void drawBoard(char* spaces) {
 }
 
 void playerMove(char* spaces, char player) {
-    int number;
+    int choice; // choice to place the marker on the board
     do {
         std::cout << "Enter a spot to place a marker (1 - 9): ";
-        std::cin >> number;
-        number--; // Decrement since arrays start at 0
+        std::cin >> choice;
+        choice--; // Decrement since arrays start at 0
 
-        if (spaces[number] == ' ')
+        if (spaces[choice] == ' ')
         {
-            spaces[number] = player; // Set space to player's marker
+            spaces[choice] = player; // Set space to player's marker
             break;
         }
-    } while (!number > 0 || !number < 8); // Can only enter number between 0 and 8
+    } while (!choice > 0 || !choice < 8); // Can only enter number between 0 and 8
 }
 
 void computerMove(char* spaces, char computer) {
+    int choice;
+    srand(time(0)); // Seed to generate random number for computer move
+
+    while (true) {
+        choice = rand() % 9; // Generate random number between 0 and 9
+        if (spaces[choice] == ' ')
+        {
+            spaces[choice] = computer;
+            break;
+        }
+    }
 
 }
 bool checkWinner(char* spaces, char player, char computer) {
