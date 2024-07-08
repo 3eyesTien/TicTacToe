@@ -1,5 +1,7 @@
 ﻿  TicTacToe.cpp
-C:\Users\nobodhi\Documents\GitHub\C++ Projects\TicTacToe\TicTacToe.cpp(70,14): warning C4804: '>': unsafe use of type 'bool' in operation
-C:\Users\nobodhi\Documents\GitHub\C++ Projects\TicTacToe\TicTacToe.cpp(70,29): warning C4804: '<': unsafe use of type 'bool' in operation
-C:\Users\nobodhi\Documents\GitHub\C++ Projects\TicTacToe\TicTacToe.cpp(75,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\nobodhi\Documents\GitHub\C++ Projects\TicTacToe\TicTacToe.cpp(69,14): warning C4804: '>': unsafe use of type 'bool' in operation
+C:\Users\nobodhi\Documents\GitHub\C++ Projects\TicTacToe\TicTacToe.cpp(69,29): warning C4804: '<': unsafe use of type 'bool' in operation
+C:\Users\nobodhi\Documents\GitHub\C++ Projects\TicTacToe\TicTacToe.cpp(74,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   TicTacToe.vcxproj -> C:\Users\nobodhi\Documents\GitHub\C++ Projects\TicTacToe\x64\Debug\TicTacToe.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.

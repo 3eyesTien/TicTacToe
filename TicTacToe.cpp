@@ -87,33 +87,33 @@ void computerMove(char* spaces, char computer) {
 bool checkWinner(char* spaces, char player, char computer) {
 
     // Check rows
-    if ((spaces[0] != ' ') && (spaces[0] == spaces[1] == spaces[2])) { // Check if first row is all the same character that isn't an empty space
+    if ((spaces[0] != ' ') && (spaces[0] == spaces[1]) && (spaces[1] == spaces[2])) { // Check if first row is all the same character that isn't an empty space
         // Ternary operator to check if spaces[0] has the same char as player, and does the respective outcome
         spaces[0] == player ? std::cout << "You win!\n" : std::cout << "You lose...\n";
     }
-    else if ((spaces[3] != ' ') && (spaces[3] == spaces[4] == spaces[5])) { // Check if second row is all the same character that isn't an empty space        
+    else if ((spaces[3] != ' ') && (spaces[3] == spaces[4]) && (spaces[4] == spaces[5])) { // Check if second row is all the same character that isn't an empty space        
         spaces[3] == player ? std::cout << "You win!\n" : std::cout << "You lose...\n";
     }
-    else if ((spaces[6] != ' ') && (spaces[6] == spaces[7] == spaces[8])) { // Check if third row is all the same character that isn't an empty space        
+    else if ((spaces[6] != ' ') && (spaces[6] == spaces[7]) && (spaces[7] == spaces[8])) { // Check if third row is all the same character that isn't an empty space        
         spaces[6] == player ? std::cout << "You win!\n" : std::cout << "You lose...\n";
     }
 
     // Check columns
-    else if ((spaces[0] != ' ') && (spaces[0] == spaces[3] == spaces[6])) {
+    else if ((spaces[0] != ' ') && (spaces[0] == spaces[3]) && (spaces[3] == spaces[6])) {
         spaces[0] == player ? std::cout << "You win!\n" : std::cout << "You lose...\n";
     }
-    else if ((spaces[1] != ' ') && (spaces[1] == spaces[4] == spaces[7])) {
+    else if ((spaces[1] != ' ') && (spaces[1] == spaces[4]) && (spaces[4] == spaces[7])) {
         spaces[1] == player ? std::cout << "You win!\n" : std::cout << "You lose...\n";
     }
-    else if ((spaces[2] != ' ') && (spaces[2] == spaces[5] == spaces[8])) {
+    else if ((spaces[2] != ' ') && (spaces[2] == spaces[5]) && (spaces[5] == spaces[8])) {
         spaces[2] == player ? std::cout << "You win!\n" : std::cout << "You lose...\n";
     }
 
     // Check diagonals
-    else if ((spaces[0] != ' ') && (spaces[0] == spaces[4] == spaces[8])) {
+    else if ((spaces[0] != ' ') && (spaces[0] == spaces[4]) && (spaces[4] == spaces[8])) {
         spaces[0] == player ? std::cout << "You win!\n" : std::cout << "You lose...\n";
     }
-    else if ((spaces[2] != ' ') && (spaces[2] == spaces[4] == spaces[6])) {
+    else if ((spaces[2] != ' ') && (spaces[2] == spaces[4]) && (spaces[4] == spaces[6])) {
         spaces[2] == player ? std::cout << "You win!\n" : std::cout << "You lose...\n";
     }
     else {
