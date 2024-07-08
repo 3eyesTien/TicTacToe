@@ -4,11 +4,11 @@
 #include <iostream>
 #include <ctime>
 
-void drawBoard(char* spaces); // Pointer to array called spaces. Spaces is a 1-dimensional array
-void playerMove(char* spaces, char player);
-void computerMove(char* spaces, char computer);
-bool checkWinner(char* spaces, char player, char computer);
-bool checkTie(char* spaces);
+void drawBoard(char *spaces); // Pointer to array called spaces. Spaces is a 1-dimensional array
+void playerMove(char *spaces, char player);
+void computerMove(char *spaces, char computer);
+bool checkWinner(char *spaces, char player, char computer);
+bool checkTie(char *spaces);
 
 int main()
 {
@@ -27,6 +27,11 @@ int main()
             gameActive = false;
             break;
         }
+        else if (checkTie(spaces))
+        {
+            gameActive = false;
+            break;
+        }
 
         computerMove(spaces, computer);
         drawBoard(spaces);
@@ -35,12 +40,18 @@ int main()
             gameActive = false;
             break;
         }
+        else if (checkTie(spaces))
+        {
+            gameActive = false;
+            break;
+        }
     }
-    
+
+    std::cout << "Thank you for playing!\n";
     return 0;
 }
 
-void drawBoard(char* spaces) {
+void drawBoard(char *spaces) {
     std::cout << "\n";
     std::cout << "     |     |     " << "\n";
     std::cout << "  " << spaces[0] << "  |  " << spaces[1] << "  |  " << spaces[2] << "  " <<  "\n";
@@ -54,7 +65,7 @@ void drawBoard(char* spaces) {
     std::cout << "\n";
 }
 
-void playerMove(char* spaces, char player) {
+void playerMove(char *spaces, char player) {
     int choice; // choice to place the marker on the board
     do {
         std::cout << "Enter a spot to place a marker (1 - 9): ";
@@ -69,7 +80,7 @@ void playerMove(char* spaces, char player) {
     } while (!choice > 0 || !choice < 8); // Can only enter number between 0 and 8
 }
 
-void computerMove(char* spaces, char computer) {
+void computerMove(char *spaces, char computer) {
     int choice;
     srand(time(0)); // Seed to generate random number for computer move
 
@@ -84,7 +95,7 @@ void computerMove(char* spaces, char computer) {
 
 }
 
-bool checkWinner(char* spaces, char player, char computer) {
+bool checkWinner(char *spaces, char player, char computer) {
 
     // Check rows
     if ((spaces[0] != ' ') && (spaces[0] == spaces[1]) && (spaces[1] == spaces[2])) { // Check if first row is all the same character that isn't an empty space
@@ -122,7 +133,16 @@ bool checkWinner(char* spaces, char player, char computer) {
 
     return true;
 }
-bool checkTie(char* spaces) {
+bool checkTie(char *spaces) {
 
-    return 0;
+    for(int i = 0; i < 9; i++)
+    {
+        if (spaces[i] == ' ')
+        {
+            return false;
+        }
+    }
+
+    std::cout << "It's a tie!\n";
+    return true;
 }
